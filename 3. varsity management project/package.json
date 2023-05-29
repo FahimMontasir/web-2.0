@@ -7,8 +7,13 @@
     "start": "ts-node-dev --respawn --transpile-only src/server.ts",
     "lint:fix": "eslint --fix",
     "lint:check": "eslint --ignore-path .eslintignore --ext .js,.ts .",
-    "format": "prettier --ignore-path .prettierignore --write \"**/*.+(js|ts|json)\"",
+    "format:fix": "prettier --ignore-path .prettierignore --write \"**/*.+(js|ts|json)\"",
+    "format:check": "prettier --ignore-path .prettierignore --check \"**/*.+(js|ts|json)\"",
+    "format:lint": "yarn format:check && yarn lint:check",
     "prepare": "cd .. && husky install '3. varsity management project'/.husky"
+  },
+  "lint-staged": {
+    "src/**/*.ts": "yarn format:lint"
   },
   "keywords": [],
   "author": "",
@@ -21,6 +26,7 @@
     "eslint": "^8.41.0",
     "eslint-config-prettier": "^8.8.0",
     "husky": "^8.0.3",
+    "lint-staged": "^13.2.2",
     "prettier": "^2.8.8",
     "ts-node-dev": "^2.0.0",
     "typescript": "^5.0.4"
