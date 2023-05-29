@@ -166,3 +166,9 @@
             3. auth/change-password (POST)
             4. auth/forgot-password (POST)
             5. auth/reset-password (POST)
+
+## Plans
+
+1. project setup (jira)
+2. eslint & prettier
+3. huskey and lint stage
