@@ -1,3 +1,7 @@
+`resources`
+1. [eslint and prettier](https://blog.logrocket.com/linting-typescript-eslint-prettier/)
+2. [husky](https://typicode.github.io/husky/getting-started.html)
+3. [lint-staged](https://www.npmjs.com/package/lint-staged?activeTab=readme)
 # REQUIREMENT ANALYSIS
 
 ## We are build a varsity management project where we will have roles:
