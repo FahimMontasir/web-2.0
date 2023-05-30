@@ -5,7 +5,7 @@
   "main": "src/server.ts",
   "scripts": {
     "start": "ts-node-dev --respawn --transpile-only src/server.ts",
-    "lint:fix": "eslint --fix",
+    "lint:fix": "eslint . --fix",
     "lint:check": "eslint --ignore-path .eslintignore --ext .js,.ts .",
     "format:fix": "prettier --ignore-path .prettierignore --write \"**/*.+(js|ts|json)\"",
     "format:check": "prettier --ignore-path .prettierignore --check \"**/*.+(js|ts|json)\"",
