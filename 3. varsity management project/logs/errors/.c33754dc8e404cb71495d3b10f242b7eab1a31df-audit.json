@@ -1,0 +1,20 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "/media/fahim/hdd(all files)1/web-2.0/3. varsity management project/logs/errors/.c33754dc8e404cb71495d3b10f242b7eab1a31df-audit.json",
+    "files": [
+        {
+            "date": 1685962966688,
+            "name": "/media/fahim/hdd(all files)1/web-2.0/3. varsity management project/logs/errors/vmp-2023-05-06-17-error.log",
+            "hash": "6db2596eebfb46c8b3a19bcc8d7d4d5331a52090dcb7b0b736fcbcd3063f8bc2"
+        },
+        {
+            "date": 1685966490993,
+            "name": "/media/fahim/hdd(all files)1/web-2.0/3. varsity management project/logs/errors/vmp-2023-05-06-18-error.log",
+            "hash": "caccb9179e76ecab369a65d4e7b4be4ab3b6b27365e98373ff267f644c0d9301"
+        }
+    ],
+    "hashType": "sha256"
+}

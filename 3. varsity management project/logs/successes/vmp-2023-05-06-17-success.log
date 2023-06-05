@@ -1,0 +1,38 @@
+{
+  message: 'Database connected successfully',
+  level: 'info',
+  label: 'VMP-AUTH',
+  timestamp: '2023-06-05T11:02:51.661Z'
+}
+{
+  message: 'listening port 5000',
+  level: 'info',
+  label: 'VMP-AUTH',
+  timestamp: '2023-06-05T11:02:51.668Z'
+}
+Mon Jun 05 2023 17:11:14 [VMP-AUTH] info: Database connected successfully
+Mon Jun 05 2023 17:11:14 [VMP-AUTH] info: listening port 5000
+Mon Jun 05 2023 17:23:47 [VMP-AUTH] info: Database connected successfully
+Mon Jun 05 2023 17:23:47 [VMP-AUTH] info: listening port 5000
+Mon Jun 05 2023 17:31:9 [VMP-AUTH] info: Database connected successfully
+Mon Jun 05 2023 17:31:9 [VMP-AUTH] info: listening port 5000
+Mon Jun 05 2023 17:35:46 [VMP-AUTH] info: Database connected successfully
+Mon Jun 05 2023 17:35:46 [VMP-AUTH] info: listening port 5000
+Mon Jun 05 2023 17:37:1 [VMP-AUTH] info: Database connected successfully
+Mon Jun 05 2023 17:37:1 [VMP-AUTH] info: listening port 5000
+Mon Jun 05 2023 17:42:50 [VMP-AUTH] info: Database connected successfully
+Mon Jun 05 2023 17:42:50 [VMP-AUTH] info: listening port 5000
+Mon Jun 05 2023 17:47:43 [VMP-AUTH] info: Database connected successfully
+Mon Jun 05 2023 17:47:43 [VMP-AUTH] info: listening port 5000
+Mon Jun 05 2023 17:48:6 [VMP-AUTH] info: Database connected successfully
+Mon Jun 05 2023 17:48:6 [VMP-AUTH] info: listening port 5000
+Mon Jun 05 2023 17:48:45 [VMP-AUTH] info: Database connected successfully
+Mon Jun 05 2023 17:48:45 [VMP-AUTH] info: listening port 5000
+Mon Jun 05 2023 17:50:1 [VMP-AUTH] info: Database connected successfully
+Mon Jun 05 2023 17:50:1 [VMP-AUTH] info: listening port 5000
+Mon Jun 05 2023 17:58:59 [VMP-AUTH] info: Database connected successfully
+Mon Jun 05 2023 17:58:59 [VMP-AUTH] info: listening port 5000
+Mon Jun 05 2023 17:59:8 [VMP-AUTH] info: Database connected successfully
+Mon Jun 05 2023 17:59:8 [VMP-AUTH] info: listening port 5000
+Mon Jun 05 2023 17:59:42 [VMP-AUTH] info: Database connected successfully
+Mon Jun 05 2023 17:59:42 [VMP-AUTH] info: listening port 5000
