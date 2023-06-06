@@ -1,24 +1,19 @@
-import { NextFunction, Request, Response } from 'express';
+import { ErrorRequestHandler } from 'express';
 import config from '../config';
 import { IGenericErrorMessage } from '../interfaces/error';
 import handleValidationError from '../errors/handleValidationError';
-import mongoose from 'mongoose';
 import ApiError from '../errors/ApiError';
+import { errorLogger } from '../shared/logger';
 
-const globalErrorHandler = (
-  err: Error,
-  req: Request,
-  res: Response,
-  next: NextFunction
-) => {
+const globalErrorHandler: ErrorRequestHandler = (err, req, res, next) => {
+  errorLogger.error(err);
+
   let statusCode = 500;
   let message = 'Something went wrong!';
   let errorMessages: IGenericErrorMessage[] = [];
 
   if (err?.name === 'ValidationError') {
-    const simplifiedError = handleValidationError(
-      err as mongoose.Error.ValidationError
-    );
+    const simplifiedError = handleValidationError(err);
     statusCode = simplifiedError.statusCode;
     message = simplifiedError.message;
     errorMessages = simplifiedError.errorMessages;

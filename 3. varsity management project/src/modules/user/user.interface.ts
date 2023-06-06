@@ -6,4 +6,4 @@ export type IUser = {
   password: string;
 };
 
-export type IUserModel = Model<IUser, object>;
+export type IUserModel = Model<IUser, Record<string, unknown>>;

@@ -1,6 +1,6 @@
 import express, { Application } from 'express';
 import cors from 'cors';
-import usersRouter from './modules/user/user.route';
+import { UserRoute } from './modules/user/user.route';
 import globalErrorHandler from './middlewares/globalErrorHandler';
 
 const app: Application = express();
@@ -10,9 +10,9 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+//app routes
+app.use('/api/v1/users', UserRoute);
+
 // error middleware
 app.use(globalErrorHandler);
-//app routes
-app.use('/api/v1/users', usersRouter);
-
 export default app;

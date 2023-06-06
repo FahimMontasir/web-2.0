@@ -1,6 +1,7 @@
 import path from 'path';
 import { createLogger, format, transports } from 'winston';
 import DailyRotateFile from 'winston-daily-rotate-file';
+import config from '../config';
 const { combine, timestamp, label, printf } = format;
 
 const customFormat = printf(({ level, message, label, timestamp }) => {
@@ -11,6 +12,8 @@ const customFormat = printf(({ level, message, label, timestamp }) => {
   return `${date.toDateString()} ${hours}:${minutes}:${seconds} [${label}] ${level}: ${message}`;
 });
 
+const isProduction = config.env === 'production';
+
 const logger = createLogger({
   level: 'info',
   format: combine(
@@ -20,19 +23,20 @@ const logger = createLogger({
     // prettyPrint()
   ),
   transports: [
-    new transports.Console(),
-    new DailyRotateFile({
-      filename: path.join(
-        process.cwd(),
-        'logs',
-        'successes',
-        'vmp-%DATE%-success.log'
-      ),
-      datePattern: 'YYYY-DD-MM-HH',
-      zippedArchive: true,
-      maxSize: '20m',
-      maxFiles: '14d',
-    }),
+    isProduction
+      ? new DailyRotateFile({
+          filename: path.join(
+            process.cwd(),
+            'logs',
+            'successes',
+            'vmp-%DATE%-success.log'
+          ),
+          datePattern: 'YYYY-DD-MM-HH',
+          zippedArchive: true,
+          maxSize: '20m',
+          maxFiles: '14d',
+        })
+      : new transports.Console(),
   ],
 });
 
@@ -40,19 +44,20 @@ const errorLogger = createLogger({
   level: 'error',
   format: combine(label({ label: 'VMP-AUTH' }), timestamp(), customFormat),
   transports: [
-    new transports.Console(),
-    new DailyRotateFile({
-      filename: path.join(
-        process.cwd(),
-        'logs',
-        'errors',
-        'vmp-%DATE%-error.log'
-      ),
-      datePattern: 'YYYY-DD-MM-HH',
-      zippedArchive: true,
-      maxSize: '20m',
-      maxFiles: '14d',
-    }),
+    isProduction
+      ? new DailyRotateFile({
+          filename: path.join(
+            process.cwd(),
+            'logs',
+            'errors',
+            'vmp-%DATE%-error.log'
+          ),
+          datePattern: 'YYYY-DD-MM-HH',
+          zippedArchive: true,
+          maxSize: '20m',
+          maxFiles: '14d',
+        })
+      : new transports.Console(),
   ],
 });
 
