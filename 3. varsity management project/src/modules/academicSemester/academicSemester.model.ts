@@ -37,7 +37,12 @@ const academicSemesterSchema = new Schema<IAcademicSemester>(
       enum: MONTHS,
     },
   },
-  { timestamps: true }
+  {
+    timestamps: true,
+    toJSON: {
+      virtuals: true,
+    },
+  }
 );
 
 // pre hook to check if the semester year and title is same

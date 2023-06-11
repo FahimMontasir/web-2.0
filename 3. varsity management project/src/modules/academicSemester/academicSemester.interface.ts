@@ -25,3 +25,7 @@ export type IAcademicSemesterModel = Model<
 export type AcademicTitleCodeMapper = {
   [key in AcademicTitle]: AcademicCode;
 };
+
+export type IAcademicSemesterFilters = {
+  searchTerm?: string;
+};

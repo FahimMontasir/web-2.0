@@ -24,3 +24,12 @@ export const ACADEMIC_TITLE_CODE_MAPPER: AcademicTitleCodeMapper = {
   Summer: '02',
   Fall: '03',
 } as const;
+
+export const ACADEMIC_SEMESTER_SEARCHABLE = ['title', 'code', 'year'] as const;
+
+export const ACADEMIC_SEMESTER_FILTERABLE = [
+  'searchTerm',
+  'title',
+  'code',
+  'year',
+];
