@@ -2,11 +2,11 @@ import config from '../../config';
 import ApiError from '../../errors/ApiError';
 import { IUser } from './user.interface';
 import User from './user.model';
-import { generateUserID } from './user.utils';
+import { generateStudentID } from './user.utils';
 
 const createUserToDB = async (user: IUser): Promise<IUser | null> => {
   // we need an incremental id and a default pass
-  const id = await generateUserID();
+  const id = await generateStudentID({ code: '02', year: 2025 });
   user.id = id;
 
   if (!user.password) {
