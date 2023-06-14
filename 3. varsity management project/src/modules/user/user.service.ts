@@ -4,7 +4,7 @@ import { IUser } from './user.interface';
 import User from './user.model';
 import { generateStudentID } from './user.utils';
 
-const createUserToDB = async (user: IUser): Promise<IUser | null> => {
+const createStudent = async (user: IUser): Promise<IUser | null> => {
   // we need an incremental id and a default pass
   const id = await generateStudentID({ code: '02', year: 2025 });
   user.id = id;
@@ -22,5 +22,5 @@ const createUserToDB = async (user: IUser): Promise<IUser | null> => {
 };
 
 export const UserService = {
-  createUserToDB,
+  createStudent,
 };

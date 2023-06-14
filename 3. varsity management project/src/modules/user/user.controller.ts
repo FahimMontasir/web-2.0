@@ -2,18 +2,18 @@ import { UserService } from './user.service';
 import { catchAsync } from '../../shared/catchAsync';
 import { sendResponse } from '../../shared/sendResponse';
 
-const createUser = catchAsync(async (req, res) => {
-  const user = req.body;
-  const result = await UserService.createUserToDB(user);
+const createStudent = catchAsync(async (req, res) => {
+  const { student, ...userData } = req.body;
+  const result = await UserService.createStudent(student, userData);
 
   sendResponse(res, {
     statusCode: 200,
     success: true,
-    message: 'User created successfully',
+    message: 'Student created successfully',
     data: result,
   });
 });
 
 export const UserController = {
-  createUser,
+  createStudent,
 };
