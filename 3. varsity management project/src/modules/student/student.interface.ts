@@ -1,5 +1,5 @@
 import { Model, Types } from 'mongoose';
-import { GENDER, BLOOD_GROUP } from './student.constant';
+import { GENDER, BLOOD_GROUP, STUDENT_FILTERABLE } from './student.constant';
 
 export type IStudent = {
   id: string;
@@ -40,3 +40,7 @@ export type IStudent = {
 };
 
 export type StudentModel = Model<IStudent, Record<string, unknown>>;
+
+export type IStudentFilters = {
+  [key in (typeof STUDENT_FILTERABLE)[number]]: string;
+};
