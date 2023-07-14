@@ -1,0 +1,24 @@
+vercel deployment:
+
+[only fist time] install vercel cli and vercel login
+
+1. touch vercel.json
+2. [insert into vercel.json]
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "dist/server.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "dist/server.js"
+    }
+  ]
+}
+3. vercel
+4. yarn build 
+5. vercel --prod 
