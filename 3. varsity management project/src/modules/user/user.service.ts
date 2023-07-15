@@ -31,6 +31,8 @@ const createStudent = async (
   const academicSemester = await AcademicSemesterModel.findById(
     student.academicSemester
   );
+  if (!academicSemester)
+    throw new ApiError(404, 'Academic semester not found!');
 
   let newUserAllData;
   const session = await mongoose.startSession();
@@ -87,6 +89,7 @@ const createFaculty = async (
   if (!user.password) {
     user.password = config.default_faculty_pass as string;
   }
+
   // set role
   user.role = 'faculty';
 
@@ -148,6 +151,7 @@ const createAdmin = async (
   if (!user.password) {
     user.password = config.default_admin_pass as string;
   }
+
   // set role
   user.role = 'admin';
 

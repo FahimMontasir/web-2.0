@@ -1,5 +1,7 @@
 import { Schema, model } from 'mongoose';
+import bcrypt from 'bcrypt';
 import { IUser, IUserModel } from './user.interface';
+import config from '../../config';
 
 const userSchema = new Schema<IUser>(
   {
@@ -37,6 +39,17 @@ const userSchema = new Schema<IUser>(
     },
   }
 );
+
+// this pre hook only works User.create() || user.save()
+userSchema.pre('save', async function (next) {
+  // hashing user password
+  this.password = await bcrypt.hash(
+    this.password,
+    Number(config.bcrypt_salt_rounds)
+  );
+
+  next();
+});
 
 const User = model<IUser, IUserModel>('User', userSchema);
 
