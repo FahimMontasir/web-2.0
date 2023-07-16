@@ -3,7 +3,7 @@ import bcrypt from 'bcrypt';
 import { IUser, IUserModel } from './user.interface';
 import config from '../../config';
 
-const userSchema = new Schema<IUser>(
+const userSchema = new Schema<IUser, IUserModel>(
   {
     id: {
       type: String,
@@ -18,6 +18,11 @@ const userSchema = new Schema<IUser>(
     password: {
       type: String,
       required: true,
+      select: 0,
+    },
+    needsPasswordChange: {
+      type: Boolean,
+      default: true,
     },
     student: {
       type: Schema.Types.ObjectId,
@@ -39,6 +44,28 @@ const userSchema = new Schema<IUser>(
     },
   }
 );
+
+// userSchema.methods.isUserExist = async function (id) {
+//   return await User.findOne(
+//     { id },
+//     { id: 1, password: 1, needsPasswordChange: 1 }
+//   ).lean();
+// };
+
+// userSchema.methods.isPasswordMatched = async function (givenPass, savedPass) {
+//   return await bcrypt.compare(givenPass, savedPass);
+// };
+
+userSchema.statics.isUserExist = async function (id) {
+  return await User.findOne(
+    { id },
+    { id: 1, password: 1, needsPasswordChange: 1, role: 1 }
+  ).lean();
+};
+
+userSchema.statics.isPasswordMatched = async function (givenPass, savedPass) {
+  return await bcrypt.compare(givenPass, savedPass);
+};
 
 // this pre hook only works User.create() || user.save()
 userSchema.pre('save', async function (next) {
