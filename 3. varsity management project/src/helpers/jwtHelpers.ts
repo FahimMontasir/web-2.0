@@ -1,5 +1,6 @@
 import jwt, { Secret } from 'jsonwebtoken';
 import { IUser } from '../modules/user/user.interface';
+import { IDecodedUser } from '../interfaces/common';
 
 const createToken = (
   payload: Pick<IUser, 'id' | 'role'>,
@@ -9,8 +10,8 @@ const createToken = (
   return jwt.sign(payload, secret, { expiresIn: expireTime });
 };
 
-const verifyToken = (token: string, secret: Secret) => {
-  return jwt.verify(token, secret);
+const verifyToken = (token: string, secret: Secret): IDecodedUser => {
+  return jwt.verify(token, secret) as IDecodedUser;
 };
 
 export const JwtHelpers = {

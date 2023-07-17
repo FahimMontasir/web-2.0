@@ -1,4 +1,12 @@
+import { USER_ROLE } from '../enums/user';
 import { IGenericErrorMessage } from './error';
+
+export type IDecodedUser = {
+  id: string;
+  role: USER_ROLE;
+  iat: number;
+  exp: number;
+};
 
 export type IGenericErrorResponse = {
   statusCode: number;
