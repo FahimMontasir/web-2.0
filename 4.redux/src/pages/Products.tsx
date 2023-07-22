@@ -64,7 +64,7 @@ export default function Products() {
           <div className="max-w-xl">
             <Slider
               defaultValue={[150]}
-              max={150}
+              max={150000}
               min={0}
               step={1}
               onValueChange={(value) => handleSlider(value)}
