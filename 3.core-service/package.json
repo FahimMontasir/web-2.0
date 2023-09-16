@@ -4,7 +4,7 @@
   "description": "",
   "main": "src/server.ts",
   "scripts": {
-    "start": "ts-node-dev --respawn --transpile-only src/server.ts",
+    "dev": "ts-node-dev --respawn --transpile-only src/server.ts",
     "lint:check": "eslint --ignore-path .eslintignore --ext .js,.ts .",
     "lint:fix": "eslint . --fix",
     "prettier:check": "prettier --ignore-path .gitignore --write \"**/*.+(js|ts|json)\"",
@@ -42,6 +42,7 @@
     "express": "^4.18.2",
     "http-status": "^1.6.2",
     "jsonwebtoken": "^9.0.0",
+    "mongoose": "^7.5.2",
     "prisma": "^5.2.0",
     "winston": "^3.9.0",
     "winston-daily-rotate-file": "^4.7.1",
