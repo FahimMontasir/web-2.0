@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "/media/fahim/hdd6/web-2.0/3.university-management-core-service/logs/winston/errors/.451138a48b918aae148cff145f4b092fb9737a02-audit.json",
+    "files": [
+        {
+            "date": 1696312378182,
+            "name": "/media/fahim/hdd6/web-2.0/3.university-management-core-service/logs/winston/errors/phu-2023-03-10-11-error.log",
+            "hash": "a771236e83e94adfb629921c40caf23e81c351d7f76400319b3ea1254f9387ad"
+        }
+    ],
+    "hashType": "sha256"
+}
