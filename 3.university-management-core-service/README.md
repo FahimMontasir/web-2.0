@@ -1,9 +1,5 @@
 # University Management Core Service
 
-## Resources
-
-### Stater Repository: 
-[University Management Core Service Starter](https://github.com/Apollo-Level2-Web-Dev/university-management-core-service-starter)
 
 ### ER Diagram
 - [Module 35: ER Diagram](https://i.ibb.co/Ln2FttV/university-management-core-service-module-1.png)
